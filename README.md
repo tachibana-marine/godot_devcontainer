@@ -8,6 +8,13 @@ Runs Godot Editor on the container by sharing /tmp/.X11-unix with the host machi
 
 For linux only (might work on WSL but not too sure).
 
+## What's in the container
+
+- Godot 4.3 stable
+- Python 3
+- gdtoolkit
+- godotFormatterAndLinter
+
 ## Usage
 
 1. Clone this repo
