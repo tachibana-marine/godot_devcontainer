@@ -4,13 +4,14 @@
 
 Devcontainer with Godot utilities.
 
-Runs Godot Editor on the container by sharing /tmp/.X11-unix.
+Runs Godot Editor on the container by sharing /tmp/.X11-unix with the host machine.
 
-For linux (or OS with /tmp/.X11-unix) only.
+For linux only (might work on WSL but not too sure).
 
 ## Usage
 
 1. Clone this repo
 2. Open the cloned directory with VS Code
     - Godot editor will open up automatically
+    - You might want to remove .git for this repo
 3. Create a new project and have fun
