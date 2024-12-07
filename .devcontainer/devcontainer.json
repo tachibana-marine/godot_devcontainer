@@ -1,7 +1,7 @@
 {
     "name": "Debian",
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
     },
     "customizations": {
         "vscode": {
@@ -12,9 +12,16 @@
             ]    
         }
     },
-    "mounts": ["source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"],
-    "runArgs": [
-        "--network=host"
+    "mounts": [
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
+        "source=/dev/snd,target=/dev/snd,type=bind,consistency=cached",
+        // "source=/etc/modprobe.d,target=/etc/modprobe.d,type=bind,consistency=cached",
     ],
+    "runArgs": [
+        "--network=host",
+        "--device=/dev/snd",
+        "--group-add=audio"
+    ],
+    // "containerEnv": {"ALSA_CARD":"Generic"},
     "postStartCommand": "/workspaces/Godot/Godot_v4.3-stable_linux.x86_64 -e"
 }

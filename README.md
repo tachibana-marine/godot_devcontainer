@@ -17,8 +17,9 @@ For linux only (might work on WSL but not too sure).
 
 ## Usage
 
-1. Clone this repo
-2. Open the cloned directory with VS Code
+1. (Optional if you don't need audio) Install PulseAudio
+2. Clone this repo
+3. Open the cloned directory with VS Code
     - Godot editor will open up automatically
     - You might want to remove .git for this repo
-3. Create a new project and have fun
+4. Create a new project and have fun
