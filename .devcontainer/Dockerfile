@@ -13,9 +13,14 @@ RUN groupadd --gid $USER_GID $USERNAME &&\
     echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME &&\
     chmod 0440 /etc/sudoers.d/$USERNAME
 
+# Install tools to download and extract Godot executable
 RUN apt update && apt upgrade -y && apt install wget unzip git -y    
 # Install python and gdtoolkit for the linter
 RUN apt update && apt upgrade -y && apt install python3 python3-pip -y && python3 -m pip install gdtoolkit --break-system-packages
+# Install gedit to get gui libs
+RUN apt update && apt install  gedit -y
+# Install audio related libs
+RUN apt update && apt install alsa-utils ffmpeg pulseaudio -y
 
 RUN mkdir /workspaces/Godot
 WORKDIR /workspaces/Godot

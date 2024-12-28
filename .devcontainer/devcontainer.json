@@ -13,8 +13,17 @@
             ]    
         }
     },
+    "containerEnv": {
+        "PULSE_SERVER":"unix:/run/user/1000/pulse/native",
+        "DISPLAY":"${localEnv:DISPLAY}"
+    },
+    "mounts": [
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
+        // from https://comp0016-team-24.github.io/dev/problem-solving/2020/10/30/passing-audio-into-docker.html
+        "source=/run/user/1000/pulse/native,target=/run/user/1000/pulse/native,type=bind,consistency=cached"
+    ],    
     "runArgs": [
         "--network=host",
-        "--group-add=audio",
-    ],
+        "--group-add=audio"
+    ]
 }
