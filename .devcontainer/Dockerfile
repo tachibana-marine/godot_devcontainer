@@ -1,10 +1,9 @@
 FROM debian:latest
-#FROM nvidia/cuda:11.6.2-base-ubuntu20.04
-WORKDIR /workspaces/
 
 ARG USERNAME=user
 ARG USER_UID=1000
 ARG USER_GID=1000
+ENV SHELL=/bin/bash
 
 RUN groupadd --gid $USER_GID $USERNAME &&\
     useradd --uid $USER_UID --gid $USER_GID -m $USERNAME &&\
@@ -22,9 +21,9 @@ RUN apt update && apt install  gedit -y
 # Install audio related libs
 RUN apt update && apt install alsa-utils ffmpeg pulseaudio -y
 
-RUN mkdir /workspaces/Godot
-WORKDIR /workspaces/Godot
+RUN mkdir /Godot
+WORKDIR /Godot
 RUN wget https://github.com/godotengine/godot/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip && unzip Godot_v4.3-stable_linux.x86_64.zip
 
 USER $USERNAME
-ENV SHELL=/bin/bash
+
