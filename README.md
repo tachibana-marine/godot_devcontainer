@@ -20,10 +20,9 @@ I didn't want to mess with Python in my local machine just to use linter.
 ## Usage
 
 1. Copy .devcontainer/ and .vscode/ into your Godot project directory.
-2. Start Godot editor locally.
-3. Open your project directory with VSCode.
-4. Reopen the directory with container.
-5. Have fun.
+2. Open your project with VSCode.
+3. Reopen the directory with container.
+4. Have fun.
 
 ## FAQ
 
