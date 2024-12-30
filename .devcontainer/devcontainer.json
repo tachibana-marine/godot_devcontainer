@@ -3,8 +3,6 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "workspaceMount": "source=${localWorkspaceFolder}/,target=${localWorkspaceFolder},type=bind",
-    "workspaceFolder": "${localWorkspaceFolder}",
     "customizations": {
         "vscode": {
             "extensions": [
@@ -24,7 +22,7 @@
         "source=/run/user/1000/pulse/native,target=/run/user/1000/pulse/native,type=bind,consistency=cached"
     ],    
     "runArgs": [
-        "--network=host",
         "--group-add=audio"
-    ]
+    ],
+    "postStartCommand": "/Godot/Godot_v4.3-stable_linux.x86_64 --headless -e"
 }
